@@ -50,10 +50,14 @@ public class HomePage extends AppCompatActivity {
         fab_cart = findViewById(R.id.fab_cart);
         DishRepository dishRepository = new DishRepository(this.getApplication());
 
+
+        /* For Testing Purpose
         Dish dish = new Dish("Pizza", "Pepperoni, Italian Sausage, Mushrooms, Green peppers, and Anchovies.", null, 15.0);
         Dish dish1 = new Dish("Burger", "A huge single or triple burger with all the fixings, cheese, lettuce, tomato, onions and special sauce or mayonnaise!", null, 15.0);
         dishRepository.insertDish(dish1);
         dishRepository.insertDish(dish);
+        */
+
 
         String Name = getIntent().getStringExtra("Name");
         tv_Hi.setText("Hi, " + Name);
