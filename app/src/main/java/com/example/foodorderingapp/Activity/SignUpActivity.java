@@ -49,6 +49,7 @@ public class SignUpActivity extends AppCompatActivity {
                 userRepository.addUser(user);
                 Toast.makeText(SignUpActivity.this, "Welcome", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(SignUpActivity.this, HomePage.class);
+                MainActivity.currentUser = Name;
                 intent.putExtra("Name", Name);
                 startActivity(intent);
             }

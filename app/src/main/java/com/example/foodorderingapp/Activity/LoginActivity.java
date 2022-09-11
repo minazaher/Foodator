@@ -33,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
                 String Password = et_password.getText().toString();
                 User user = userRepository.getUser(Email, Password);
                 String Name = user.getName();
+                MainActivity.currentUser = Name;
                 Intent intent = new Intent(LoginActivity.this, HomePage.class);
                 intent.putExtra("userName", Name);
                 System.out.println("This User Name is " + Name);

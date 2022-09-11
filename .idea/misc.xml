@@ -15,10 +15,13 @@
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/drawable/person.xml" value="0.208" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/drawable/profile.xml" value="0.232" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/drawable/search_bg.xml" value="0.2145" />
-        <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/layout/activity_checkout.xml" value="0.2" />
+        <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/drawable/upper_profile.xml" value="0.145" />
+        <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/layout/activity_checkout.xml" value="0.18040370058873004" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/layout/activity_home_page.xml" value="0.18040370058873004" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/layout/activity_login.xml" value="0.18040370058873004" />
-        <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/layout/activity_profile.xml" value="0.18040370058873004" />
+        <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/layout/activity_profile2.xml" value="0.18333333333333332" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/layout/activity_show_detalis.xml" value="0.2" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/layout/cart_item.xml" value="0.2" />

@@ -15,14 +15,13 @@ import com.example.foodorderingapp.R;
 public class MainActivity extends AppCompatActivity {
     ConstraintLayout start;
     EditText userName;
-
+    public static String currentUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        start = (ConstraintLayout) findViewById(R.id.constraintLayout_start);
-        userName = findViewById(R.id.et_name);
+        start = findViewById(R.id.constraintLayout_start);
 
         start.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, SignUpActivity.class);

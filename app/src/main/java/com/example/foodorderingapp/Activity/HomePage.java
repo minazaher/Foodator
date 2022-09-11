@@ -14,6 +14,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +35,7 @@ public class HomePage extends AppCompatActivity {
     public static ArrayList<Dish> cart = new ArrayList<>();
     public static int cartCount = 0;
     public static Double Tax = 10.0, DeliveryService = 15.0;
+    LinearLayout btn_profile;
     TextView tv_Hi;
     RecyclerView Categories, Popular;
     ImageView delete;
@@ -48,6 +50,7 @@ public class HomePage extends AppCompatActivity {
         tv_Hi = findViewById(R.id.tv_Hi);
         delete = findViewById(R.id.delete);
         fab_cart = findViewById(R.id.fab_cart);
+        btn_profile = findViewById(R.id.btn_profile);
         DishRepository dishRepository = new DishRepository(this.getApplication());
 
 
@@ -58,9 +61,14 @@ public class HomePage extends AppCompatActivity {
         dishRepository.insertDish(dish);
         */
 
-
-        String Name = getIntent().getStringExtra("Name");
-        tv_Hi.setText("Hi, " + Name);
+        btn_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomePage.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+        tv_Hi.setText("Hi, " + MainActivity.currentUser);
         recyclerViewCategory();
         recyclerViewPopular();
 
@@ -105,5 +113,6 @@ public class HomePage extends AppCompatActivity {
         categoryAdapter.categories = category;
         Categories.setAdapter(categoryAdapter);
     }
+
 
 }
