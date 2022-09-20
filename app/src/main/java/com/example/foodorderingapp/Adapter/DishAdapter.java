@@ -14,11 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foodorderingapp.Activity.HomePage;
 import com.example.foodorderingapp.Activity.showDetalis;
-
 import com.example.foodorderingapp.Model.Dish;
 import com.example.foodorderingapp.R;
+import com.example.foodorderingapp.Utilites.ApplicationClass;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -97,7 +96,7 @@ public class DishAdapter extends RecyclerView.Adapter<DishAdapter.viewholder> {
                     String dishName = tv_dishName.getText().toString();
                     Double dishPrice = 15.0;
                     Dish dish = new Dish(dishName, null, dishPrice);
-                    HomePage.cart.add(dish);
+                    ApplicationClass.cart.add(dish);
                     HomePage.cartCount++;
                 }
             });

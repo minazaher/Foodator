@@ -1,22 +1,22 @@
 package com.example.foodorderingapp.Activity;
 
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import static com.example.foodorderingapp.R.layout.activity_home_page;
 
-import android.arch.lifecycle.ViewModelProvider;
 import android.content.Intent;
-import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foodorderingapp.Adapter.CategoryAdapter;
 import com.example.foodorderingapp.Adapter.DishAdapter;
@@ -25,41 +25,40 @@ import com.example.foodorderingapp.Model.Category;
 import com.example.foodorderingapp.Model.Dish;
 import com.example.foodorderingapp.Model.DishViewModel;
 import com.example.foodorderingapp.R;
-import com.example.foodorderingapp.Utilites.DishDatabase;
+import com.example.foodorderingapp.Utilites.ApplicationClass;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class HomePage extends AppCompatActivity {
-    public static ArrayList<Dish> cart = new ArrayList<>();
     public static int cartCount = 0;
     public static Double Tax = 10.0, DeliveryService = 15.0;
     LinearLayout btn_profile;
-    TextView tv_Hi;
+    ConstraintLayout offers;
+    TextView tv_Hi, tv_categories, tv_popular;
     RecyclerView Categories, Popular;
-    ImageView delete;
+    EditText et_search;
+    ImageView delete, user_img;
+    private Bitmap bitmap;
     private DishViewModel dishViewModel;
     private FloatingActionButton fab_cart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_page);
+        setContentView(activity_home_page);
 
-        tv_Hi = findViewById(R.id.tv_Hi);
-        delete = findViewById(R.id.delete);
-        fab_cart = findViewById(R.id.fab_cart);
-        btn_profile = findViewById(R.id.btn_profile);
+        initializeUI();
+
         DishRepository dishRepository = new DishRepository(this.getApplication());
 
 
-        /* For Testing Purpose
+        // For Testing Purpose
+
         Dish dish = new Dish("Pizza", "Pepperoni, Italian Sausage, Mushrooms, Green peppers, and Anchovies.", null, 15.0);
         Dish dish1 = new Dish("Burger", "A huge single or triple burger with all the fixings, cheese, lettuce, tomato, onions and special sauce or mayonnaise!", null, 15.0);
         dishRepository.insertDish(dish1);
         dishRepository.insertDish(dish);
-        */
 
         btn_profile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +67,11 @@ public class HomePage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        tv_Hi.setText("Hi, " + MainActivity.currentUser);
+
+        tv_Hi.setText("Hi, " + ApplicationClass.currentUser.getName());
+        SignUpActivity.loadImageFromStorage(ApplicationClass.currentUser.getFilepath(), user_img);
+
+
         recyclerViewCategory();
         recyclerViewPopular();
 
@@ -80,6 +83,18 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void initializeUI() {
+        tv_Hi = findViewById(R.id.tv_Hi);
+        tv_categories = findViewById(R.id.tv_categories);
+        tv_popular = findViewById(R.id.tv_popular);
+        offers = findViewById(R.id.OfferSection);
+        delete = findViewById(R.id.delete);
+        fab_cart = findViewById(R.id.fab_cart);
+        btn_profile = findViewById(R.id.btn_profile);
+        user_img = findViewById(R.id.home_userImage);
+        et_search = findViewById(R.id.et_search);
     }
 
     private void recyclerViewPopular() {

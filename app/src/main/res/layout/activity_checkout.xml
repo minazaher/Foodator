@@ -125,7 +125,7 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/tv_signIn"
+        android:id="@+id/btn_checkout"
         android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

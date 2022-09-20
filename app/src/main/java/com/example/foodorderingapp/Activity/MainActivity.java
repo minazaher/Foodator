@@ -1,21 +1,17 @@
 package com.example.foodorderingapp.Activity;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.EditText;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.foodorderingapp.R;
 
 public class MainActivity extends AppCompatActivity {
     ConstraintLayout start;
     EditText userName;
-    public static String currentUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -13,11 +13,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.foodorderingapp.Activity.HomePage;
 import com.example.foodorderingapp.Model.Dish;
 import com.example.foodorderingapp.R;
+import com.example.foodorderingapp.Utilites.ApplicationClass;
 
 import java.util.ArrayList;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.viewholder> {
-    private final ArrayList<Dish> cartDishes = HomePage.cart;
+    private final ArrayList<Dish> cartDishes = ApplicationClass.cart;
 
     @NonNull
     @Override
@@ -45,7 +46,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.viewholder> {
 
     @Override
     public int getItemCount() {
-        return HomePage.cart.size();
+        return ApplicationClass.cart.size();
     }
 
     protected class viewholder extends RecyclerView.ViewHolder {

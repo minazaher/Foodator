@@ -4,23 +4,19 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 import androidx.room.Database;
-import androidx.room.DatabaseConfiguration;
-import androidx.room.InvalidationTracker;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
-import androidx.sqlite.db.SupportSQLiteOpenHelper;
 
 import com.example.foodorderingapp.Data.DishDao;
 import com.example.foodorderingapp.Data.UserDao;
 import com.example.foodorderingapp.Model.Dish;
 import com.example.foodorderingapp.Model.User;
 
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Dish.class, User.class}, version = 4, exportSchema = false)
+@Database(entities = {Dish.class, User.class}, version = 5, exportSchema = false)
 public abstract class DishDatabase extends RoomDatabase {
 
     public static final int NO_OF_THREADS = 4;
@@ -35,6 +31,7 @@ public abstract class DishDatabase extends RoomDatabase {
                 public void run() {
                     DishDao dishDao = instance.dishDao();
                     UserDao userDao = instance.userDao();
+                    //   OrderDao orderDao = instance.orderDao();
                 }
             });
         }
@@ -50,5 +47,7 @@ public abstract class DishDatabase extends RoomDatabase {
     public abstract DishDao dishDao();
 
     public abstract UserDao userDao();
+
+    // public abstract OrderDao orderDao();
 
 }

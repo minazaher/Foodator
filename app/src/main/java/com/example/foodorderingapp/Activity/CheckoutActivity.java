@@ -1,20 +1,23 @@
 package com.example.foodorderingapp.Activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.foodorderingapp.Adapter.CartAdapter;
 import com.example.foodorderingapp.Model.Dish;
 import com.example.foodorderingapp.R;
+import com.example.foodorderingapp.Utilites.ApplicationClass;
 
 public class CheckoutActivity extends AppCompatActivity {
     TextView Tax, deliveryService, totalPrice, itemsTotalPrice;
     ImageView cartDishImg;
+    AppCompatButton btn_checkout;
     double total_Price, items_TotalPrice;
 
     @Override
@@ -27,9 +30,10 @@ public class CheckoutActivity extends AppCompatActivity {
         totalPrice = findViewById(R.id.TotalPrice);
         itemsTotalPrice = findViewById(R.id.itemsTotalPrice);
         cartDishImg = findViewById(R.id.cartDishImg);
+        btn_checkout = findViewById(R.id.btn_checkout);
 
 
-        for (Dish d : HomePage.cart) {
+        for (Dish d : ApplicationClass.cart) {
             items_TotalPrice += d.getPrice();
         }
 
@@ -40,6 +44,18 @@ public class CheckoutActivity extends AppCompatActivity {
         itemsTotalPrice.setText(String.valueOf(items_TotalPrice));
         totalPrice.setText(String.valueOf(total_Price));
 
+/*
+        OrderRepository orderRepository = new OrderRepository(getApplication());
+
+        btn_checkout.setOnClickListener(view -> {
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+            LocalDateTime now = LocalDateTime.now();
+            Order order = new Order(now, ApplicationClass.cart);
+            orderRepository.addOrder(order);
+            runOnUiThread(() ->
+                    Toast.makeText(CheckoutActivity.this, "Order Added!", Toast.LENGTH_SHORT).show());
+        });
+*/
         initRecView();
     }
 
@@ -48,7 +64,6 @@ public class CheckoutActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.cartRecView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
-
         recyclerView.setAdapter(new CartAdapter());
 
     }

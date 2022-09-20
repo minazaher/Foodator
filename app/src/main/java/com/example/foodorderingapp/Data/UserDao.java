@@ -14,4 +14,5 @@ public interface UserDao {
 
     @Query("Select * from User where Email =(:Email) and Password = (:Password)")
     User getUser(String Email, String Password);
+
 }
