@@ -60,6 +60,7 @@ public class HomePage extends AppCompatActivity {
         dishRepository.insertDish(dish1);
         dishRepository.insertDish(dish);
 
+
         btn_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,7 +69,7 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
-        tv_Hi.setText("Hi, " + ApplicationClass.currentUser.getName());
+        tv_Hi.setText("Hi, " + ApplicationClass.currentUser.getID());
         SignUpActivity.loadImageFromStorage(ApplicationClass.currentUser.getFilepath(), user_img);
 
 

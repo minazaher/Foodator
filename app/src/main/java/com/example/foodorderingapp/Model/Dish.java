@@ -72,4 +72,12 @@ public class Dish implements Serializable {
     public void setDescription(String description) {
         Description = description;
     }
+
+    @Override
+    public String toString() {
+        return "Dish{" +
+                "Name='" + Name + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }

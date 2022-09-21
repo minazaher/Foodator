@@ -3,6 +3,7 @@ package com.example.foodorderingapp.Activity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -10,7 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foodorderingapp.Adapter.CartAdapter;
+import com.example.foodorderingapp.Data.OrderRepository;
 import com.example.foodorderingapp.Model.Dish;
+import com.example.foodorderingapp.Model.Order;
 import com.example.foodorderingapp.R;
 import com.example.foodorderingapp.Utilites.ApplicationClass;
 
@@ -44,25 +47,23 @@ public class CheckoutActivity extends AppCompatActivity {
         itemsTotalPrice.setText(String.valueOf(items_TotalPrice));
         totalPrice.setText(String.valueOf(total_Price));
 
-/*
+
         OrderRepository orderRepository = new OrderRepository(getApplication());
 
         btn_checkout.setOnClickListener(view -> {
-            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-            LocalDateTime now = LocalDateTime.now();
-            Order order = new Order(now, ApplicationClass.cart);
+            Order order = new Order(ApplicationClass.cart, total_Price);
             orderRepository.addOrder(order);
             runOnUiThread(() ->
                     Toast.makeText(CheckoutActivity.this, "Order Added!", Toast.LENGTH_SHORT).show());
         });
-*/
+
         initRecView();
     }
 
 
     private void initRecView() {
         RecyclerView recyclerView = findViewById(R.id.cartRecView);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(new CartAdapter());
 

@@ -11,5 +11,4 @@ public class ApplicationClass extends Application {
     public static User currentUser;
     public static ArrayList<Dish> cart = new ArrayList<>();
 
-
 }

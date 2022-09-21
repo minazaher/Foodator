@@ -14,15 +14,16 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.foodorderingapp.Data.UserDao;
 import com.example.foodorderingapp.Data.UserRepository;
 import com.example.foodorderingapp.Model.User;
 import com.example.foodorderingapp.R;
 import com.example.foodorderingapp.Utilites.ApplicationClass;
+import com.example.foodorderingapp.Utilites.DishDatabase;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -33,6 +34,7 @@ import java.io.IOException;
 
 public class SignUpActivity extends AppCompatActivity {
     private final int PICK_IMAGE_CODE = 78;
+    public User user;
     String Filepath;
     ImageView profile;
     private TextView loginPage, tv_signUp;
@@ -88,13 +90,17 @@ public class SignUpActivity extends AppCompatActivity {
                 String Email = et_email.getText().toString();
                 String Name = et_name.getText().toString();
                 String Password = et_password.getText().toString();
-                User user = new User(Email, Name, Password, Filepath);
-                userRepository.addUser(user);
-                Toast.makeText(SignUpActivity.this, "Welcome", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(SignUpActivity.this, HomePage.class);
-                ApplicationClass.currentUser = user;
-                intent.putExtra("Name", Name);
-                startActivity(intent);
+
+                Thread thread = new Thread(() -> {
+                    user = new User(Email, Name, Password, Filepath);
+                    UserDao userDao = DishDatabase.instance.userDao();
+                    userDao.addUser(user);
+                    user = userDao.getUser(Email, Password);
+                    ApplicationClass.currentUser = user;
+                    Intent intent = new Intent(SignUpActivity.this, HomePage.class);
+                    startActivity(intent);
+                });
+                thread.start();
             }
         });
     }

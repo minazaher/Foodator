@@ -9,17 +9,19 @@ import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.example.foodorderingapp.Data.DishDao;
+import com.example.foodorderingapp.Data.OrderDao;
 import com.example.foodorderingapp.Data.UserDao;
 import com.example.foodorderingapp.Model.Dish;
+import com.example.foodorderingapp.Model.Order;
 import com.example.foodorderingapp.Model.User;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Dish.class, User.class}, version = 5, exportSchema = false)
+@Database(entities = {Dish.class, User.class, Order.class}, version = 8, exportSchema = false)
 public abstract class DishDatabase extends RoomDatabase {
 
-    public static final int NO_OF_THREADS = 4;
+    public static final int NO_OF_THREADS = 6;
     public static ExecutorService DatabaseExcutorService = Executors.newFixedThreadPool(4);
     public static DishDatabase instance;
     public static RoomDatabase.Callback myCallback = new Callback() {
@@ -48,6 +50,7 @@ public abstract class DishDatabase extends RoomDatabase {
 
     public abstract UserDao userDao();
 
-    // public abstract OrderDao orderDao();
+    public abstract OrderDao orderDao();
+
 
 }

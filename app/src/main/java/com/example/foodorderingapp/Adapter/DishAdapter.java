@@ -63,7 +63,7 @@ public class DishAdapter extends RecyclerView.Adapter<DishAdapter.viewholder> {
                 holder.img_dish.setImageResource(R.drawable.cat_4);
         }
 
-        holder.add.setOnClickListener(new View.OnClickListener() {
+        holder.img_dish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(holder.itemView.getContext(), showDetalis.class);

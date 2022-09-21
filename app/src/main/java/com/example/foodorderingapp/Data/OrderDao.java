@@ -1,13 +1,31 @@
 package com.example.foodorderingapp.Data;
 
 
+import androidx.lifecycle.LiveData;
+import androidx.room.Dao;
+import androidx.room.Insert;
+import androidx.room.Query;
+import androidx.room.Transaction;
+
+import com.example.foodorderingapp.Model.Order;
+import com.example.foodorderingapp.Model.UserWithOrder;
+
+import java.util.List;
+
+@Dao
 public interface OrderDao {
-/*
+
     @Insert
     void addOrder(Order order);
 
-    @Query("Select * From `Order`")
-    LiveData<List<Order>> getAllOrders();
-*/
+
+    @Transaction
+    @Query("Select * From User ")
+    LiveData<List<UserWithOrder>> getAllOrders();
+
+
+    @Transaction
+    @Query("Select * From `order` where UserID = (:ID)")
+    List<Order> getUserOrders(int ID);
 
 }

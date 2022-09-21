@@ -10,11 +10,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foodorderingapp.Adapter.CategoryAdapter;
+import com.example.foodorderingapp.Data.OrderDao;
 import com.example.foodorderingapp.Model.Category;
+import com.example.foodorderingapp.Model.Order;
 import com.example.foodorderingapp.R;
 import com.example.foodorderingapp.Utilites.ApplicationClass;
+import com.example.foodorderingapp.Utilites.DishDatabase;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProfileActivity extends AppCompatActivity {
     TextView tv_profileName, tv_orderDate, tv_orderPrice;
@@ -29,20 +33,24 @@ public class ProfileActivity extends AppCompatActivity {
 
         tv_profileName = findViewById(R.id.tv_profileName);
         tv_orderDate = findViewById(R.id.tv_orderDate);
-        tv_orderPrice = findViewById(R.id.tv_orderPrice);
+        tv_orderPrice = findViewById(R.id.orderTotalPrice);
         ProfilePic = findViewById(R.id.ProfilePic);
         tv_profileName.setText(ApplicationClass.currentUser.getName());
         SignUpActivity.loadImageFromStorage(ApplicationClass.currentUser.getFilepath(), ProfilePic);
-/*
-        int LastOrder = ApplicationClass.currentUser.getOrderHistory().size() - 1;
-        ArrayList<Order> orderHistory = ApplicationClass.currentUser.getOrderHistory();
 
+        OrderDao dao = DishDatabase.instance.orderDao();
 
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                List<Order> orders = dao.getUserOrders(ApplicationClass.currentUser.getID());
+                Order LastOrder = orders.get(orders.size() - 1);
+                tv_orderPrice.setText(String.valueOf(LastOrder.getPrice()));
+            }
+        }).start();
 
-        tv_orderDate.setText(orderHistory.get(LastOrder).getOrderDate().toString());
-        tv_orderPrice.setText(orderHistory.get(LastOrder).getOrderDishes().get(LastOrder).getPrice().toString());
+        Thread thread = new Thread();
         recyclerViewCategory();
-        */
     }
 
 
@@ -50,6 +58,7 @@ public class ProfileActivity extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
         Categories = findViewById(R.id.fav_recyclerView);
         Categories.setLayoutManager(linearLayoutManager);
+
 
         ArrayList<Category> category = new ArrayList<>();
         category.add(new Category("Pizza", "cat_1"));

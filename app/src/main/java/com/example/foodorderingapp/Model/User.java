@@ -1,10 +1,7 @@
 package com.example.foodorderingapp.Model;
 
-import androidx.room.Embedded;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-
-import java.util.ArrayList;
 
 @Entity
 public class User {
@@ -14,8 +11,6 @@ public class User {
     private String Name;
     private String Password;
     private String filepath;
-    @Embedded
-    private ArrayList<Order> OrderHistory;
 
 
     public User() {
@@ -74,11 +69,14 @@ public class User {
         this.filepath = filepath;
     }
 
-    public ArrayList<Order> getOrderHistory() {
-        return OrderHistory;
-    }
-
-    public void setOrderHistory(ArrayList<Order> orderHistory) {
-        OrderHistory = orderHistory;
+    @Override
+    public String toString() {
+        return "User{" +
+                "ID=" + ID +
+                ", Email='" + Email + '\'' +
+                ", Name='" + Name + '\'' +
+                ", Password='" + Password + '\'' +
+                ", filepath='" + filepath + '\'' +
+                '}';
     }
 }
