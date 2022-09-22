@@ -2,6 +2,7 @@ package com.example.foodorderingapp.Activity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foodorderingapp.Adapter.CategoryAdapter;
+import com.example.foodorderingapp.Adapter.OrderAdapter;
 import com.example.foodorderingapp.Data.OrderDao;
 import com.example.foodorderingapp.Model.Category;
 import com.example.foodorderingapp.Model.Order;
@@ -21,9 +23,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProfileActivity extends AppCompatActivity {
-    TextView tv_profileName, tv_orderDate, tv_orderPrice;
+    TextView tv_profileName, tv_orderDate, tv_orderPrice, btn_updateOrders;
     ImageView ProfilePic;
-    RecyclerView Categories;
+    RecyclerView Categories, Orders;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -32,10 +34,11 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         tv_profileName = findViewById(R.id.tv_profileName);
-        tv_orderDate = findViewById(R.id.tv_orderDate);
-        tv_orderPrice = findViewById(R.id.orderTotalPrice);
         ProfilePic = findViewById(R.id.ProfilePic);
+        btn_updateOrders = findViewById(R.id.btn_updateOrders);
         tv_profileName.setText(ApplicationClass.currentUser.getName());
+
+
         SignUpActivity.loadImageFromStorage(ApplicationClass.currentUser.getFilepath(), ProfilePic);
 
         OrderDao dao = DishDatabase.instance.orderDao();
@@ -45,12 +48,23 @@ public class ProfileActivity extends AppCompatActivity {
             public void run() {
                 List<Order> orders = dao.getUserOrders(ApplicationClass.currentUser.getID());
                 Order LastOrder = orders.get(orders.size() - 1);
-                tv_orderPrice.setText(String.valueOf(LastOrder.getPrice()));
             }
         }).start();
 
-        Thread thread = new Thread();
         recyclerViewCategory();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                RecycleViewOrderHistory();
+                btn_updateOrders.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Orders.getAdapter().notifyDataSetChanged();
+                    }
+                });
+            }
+        }).start();
+
     }
 
 
@@ -70,5 +84,13 @@ public class ProfileActivity extends AppCompatActivity {
         CategoryAdapter categoryAdapter = new CategoryAdapter();
         categoryAdapter.categories = category;
         Categories.setAdapter(categoryAdapter);
+    }
+
+    private void RecycleViewOrderHistory() {
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
+        Orders = findViewById(R.id.orders_recylerview);
+        Orders.setLayoutManager(linearLayoutManager);
+        OrderAdapter orderAdapter = new OrderAdapter();
+        Orders.setAdapter(orderAdapter);
     }
 }

@@ -18,7 +18,7 @@ import com.example.foodorderingapp.Model.User;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Dish.class, User.class, Order.class}, version = 8, exportSchema = false)
+@Database(entities = {Dish.class, User.class, Order.class}, version = 9, exportSchema = false)
 public abstract class DishDatabase extends RoomDatabase {
 
     public static final int NO_OF_THREADS = 6;

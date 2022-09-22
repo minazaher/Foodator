@@ -12,7 +12,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.foodorderingapp.Activity.HomePage;
 import com.example.foodorderingapp.Activity.showDetalis;
 import com.example.foodorderingapp.Model.Dish;
 import com.example.foodorderingapp.R;
@@ -97,7 +96,7 @@ public class DishAdapter extends RecyclerView.Adapter<DishAdapter.viewholder> {
                     Double dishPrice = 15.0;
                     Dish dish = new Dish(dishName, null, dishPrice);
                     ApplicationClass.cart.add(dish);
-                    HomePage.cartCount++;
+                    ApplicationClass.cartCount++;
                 }
             });
 

@@ -8,7 +8,7 @@ import androidx.room.Query;
 import androidx.room.Transaction;
 
 import com.example.foodorderingapp.Model.Order;
-import com.example.foodorderingapp.Model.UserWithOrder;
+import com.example.foodorderingapp.Model.OrderUserCrossRef;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ public interface OrderDao {
 
     @Transaction
     @Query("Select * From User ")
-    LiveData<List<UserWithOrder>> getAllOrders();
+    LiveData<List<OrderUserCrossRef>> getAllOrders();
 
 
     @Transaction

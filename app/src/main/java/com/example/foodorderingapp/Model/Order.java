@@ -12,7 +12,7 @@ public class Order {
 
     public int UserID;
     @PrimaryKey(autoGenerate = true)
-    private int ID;
+    private int orderID;
     private String dishes;
     private double price;
 
@@ -43,19 +43,19 @@ public class Order {
         this.price = price;
     }
 
-    public int getID() {
-        return ID;
+    public int getOrderID() {
+        return orderID;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setOrderID(int orderID) {
+        this.orderID = orderID;
     }
 
 
     @Override
     public String toString() {
         return "Order{" +
-                "ID=" + ID +
+                "ID=" + orderID +
                 '}';
     }
 

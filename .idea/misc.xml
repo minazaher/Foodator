@@ -3,17 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.215" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/drawable/et_grey_bf.xml" value="0.1335" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/drawable/et_grey_bg.xml" value="0.145" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/drawable/get_started_bg.xml" value="0.188" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/drawable/help.xml" value="0.1" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/drawable/home.xml" value="0.232" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/drawable/ic_baseline_add_shopping_cart_24.xml" value="0.1665" />
+        <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/drawable/ic_baseline_arrow_circle_left_24.xml" value="0.215" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/drawable/ic_baseline_delete_outline_24.xml" value="0.224" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.1335" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.1" />
+        <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.215" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/drawable/ic_outline_cloud_upload_24.xml" value="0.145" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/drawable/orange_light_banner.xml" value="0.232" />
+        <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/drawable/order_history_border.xml" value="0.214" />
+        <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/drawable/password.xml" value="0.215" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/drawable/person.xml" value="0.208" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/drawable/profile.xml" value="0.232" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/drawable/search_bg.xml" value="0.2145" />
@@ -22,12 +27,13 @@
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/layout/activity_home_page.xml" value="0.152" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/layout/activity_login.xml" value="0.18040370058873004" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/layout/activity_profile.xml" value="0.18040370058873004" />
+        <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/layout/activity_profile.xml" value="0.16442388561816654" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/layout/activity_profile2.xml" value="0.18333333333333332" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/layout/activity_show_detalis.xml" value="0.2" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/layout/activity_sign_up.xml" value="0.264" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/layout/cart_item.xml" value="0.2" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/layout/cat_card.xml" value="0.264" />
+        <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/layout/order_details.xml" value="0.16709401709401708" />
         <entry key="..\:/Android/FoodOrderingApp/app/src/main/res/layout/popular_dishes_card.xml" value="0.4" />
       </map>
     </option>

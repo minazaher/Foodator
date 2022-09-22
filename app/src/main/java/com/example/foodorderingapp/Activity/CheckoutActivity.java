@@ -40,10 +40,10 @@ public class CheckoutActivity extends AppCompatActivity {
             items_TotalPrice += d.getPrice();
         }
 
-        total_Price = items_TotalPrice + HomePage.Tax + HomePage.DeliveryService;
+        total_Price = items_TotalPrice + ApplicationClass.Tax + ApplicationClass.DeliveryService;
 
-        Tax.setText(String.valueOf(HomePage.Tax));
-        deliveryService.setText(String.valueOf(HomePage.DeliveryService));
+        Tax.setText(String.valueOf(ApplicationClass.Tax));
+        deliveryService.setText(String.valueOf(ApplicationClass.DeliveryService));
         itemsTotalPrice.setText(String.valueOf(items_TotalPrice));
         totalPrice.setText(String.valueOf(total_Price));
 
@@ -66,6 +66,5 @@ public class CheckoutActivity extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(new CartAdapter());
-
     }
 }

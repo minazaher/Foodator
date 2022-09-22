@@ -31,8 +31,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
 public class HomePage extends AppCompatActivity {
-    public static int cartCount = 0;
-    public static Double Tax = 10.0, DeliveryService = 15.0;
     LinearLayout btn_profile;
     ConstraintLayout offers;
     TextView tv_Hi, tv_categories, tv_popular;
@@ -69,7 +67,7 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
-        tv_Hi.setText("Hi, " + ApplicationClass.currentUser.getID());
+        tv_Hi.setText("Hi, " + ApplicationClass.currentUser.getName());
         SignUpActivity.loadImageFromStorage(ApplicationClass.currentUser.getFilepath(), user_img);
 
 

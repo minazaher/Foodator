@@ -9,7 +9,7 @@ import java.io.Serializable;
 @Entity(tableName = "dish_table")
 public class Dish implements Serializable {
     @PrimaryKey(autoGenerate = true)
-    private int ID;
+    private int dishID;
     private String Name;
     private String Description;
     private String pic;
@@ -19,6 +19,7 @@ public class Dish implements Serializable {
     public Dish() {
 
     }
+
 
     public Dish(String name, String description, String pic, Double price) {
         Name = name;
@@ -33,12 +34,12 @@ public class Dish implements Serializable {
         this.price = price;
     }
 
-    public int getID() {
-        return ID;
+    public int getDishID() {
+        return dishID;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setDishID(int dishID) {
+        this.dishID = dishID;
     }
 
     public String getName() {
@@ -75,9 +76,7 @@ public class Dish implements Serializable {
 
     @Override
     public String toString() {
-        return "Dish{" +
-                "Name='" + Name + '\'' +
-                ", price=" + price +
-                '}';
+        return "Dish Name " + Name + " || " +
+                ", Price=" + price;
     }
 }

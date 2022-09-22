@@ -79,7 +79,7 @@ public class showDetalis extends AppCompatActivity {
         addToCart.setOnClickListener(view -> {
             ApplicationClass.cart.addAll(myDishes);
             Toast.makeText(this, "Added to Cart Succesfully", Toast.LENGTH_SHORT).show();
-            HomePage.cartCount += itemCounter;
+            ApplicationClass.cartCount += itemCounter;
             Intent intent = new Intent(showDetalis.this, HomePage.class);
             startActivity(intent);
         });
