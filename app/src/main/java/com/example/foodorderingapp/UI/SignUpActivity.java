@@ -1,4 +1,4 @@
-package com.example.foodorderingapp.Activity;
+package com.example.foodorderingapp.UI;
 
 import android.app.Activity;
 import android.content.Context;
@@ -18,12 +18,13 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.foodorderingapp.UI.HomePage.HomePage;
 import com.example.foodorderingapp.Data.UserDao;
 import com.example.foodorderingapp.Data.UserRepository;
 import com.example.foodorderingapp.Model.User;
 import com.example.foodorderingapp.R;
-import com.example.foodorderingapp.Utilites.ApplicationClass;
-import com.example.foodorderingapp.Utilites.DishDatabase;
+import com.example.foodorderingapp.Data.ApplicationClass;
+import com.example.foodorderingapp.Data.DishDatabase;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -32,7 +33,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 
-public class SignUpActivity extends AppCompatActivity {
+public class
+SignUpActivity extends AppCompatActivity {
     private final int PICK_IMAGE_CODE = 78;
     public User user;
     String Filepath;

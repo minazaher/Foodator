@@ -1,4 +1,4 @@
-package com.example.foodorderingapp.Activity;
+package com.example.foodorderingapp.UI;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,12 +9,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.foodorderingapp.UI.HomePage.HomePage;
 import com.example.foodorderingapp.Data.UserDao;
 import com.example.foodorderingapp.Data.UserRepository;
 import com.example.foodorderingapp.Model.User;
 import com.example.foodorderingapp.R;
-import com.example.foodorderingapp.Utilites.ApplicationClass;
-import com.example.foodorderingapp.Utilites.DishDatabase;
+import com.example.foodorderingapp.Data.ApplicationClass;
+import com.example.foodorderingapp.Data.DishDatabase;
 
 public class LoginActivity extends AppCompatActivity {
     TextView signIn;
@@ -46,12 +47,9 @@ public class LoginActivity extends AppCompatActivity {
                             runOnUiThread(() ->
                                     Toast.makeText(LoginActivity.this, "Invalid Credentials!", Toast.LENGTH_SHORT).show());
                         } else
-                            new Thread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    ApplicationClass.currentUser = user;
-                                    startActivity(new Intent(LoginActivity.this, HomePage.class));
-                                }
+                            new Thread(() -> {
+                                ApplicationClass.currentUser = user;
+                                startActivity(new Intent(LoginActivity.this, HomePage.class));
                             }).start();
                     }).start();
                 }

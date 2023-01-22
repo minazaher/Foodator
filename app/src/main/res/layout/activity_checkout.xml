@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingHorizontal="6dp"
-    tools:context=".Activity.CheckoutActivity">
+    tools:context=".UI.Checkout.CheckoutActivity">
 
     <TextView
         android:layout_width="wrap_content"

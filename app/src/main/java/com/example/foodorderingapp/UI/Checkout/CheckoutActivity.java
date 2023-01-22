@@ -1,4 +1,4 @@
-package com.example.foodorderingapp.Activity;
+package com.example.foodorderingapp.UI.Checkout;
 
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -10,12 +10,11 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.foodorderingapp.Adapter.CartAdapter;
 import com.example.foodorderingapp.Data.OrderRepository;
 import com.example.foodorderingapp.Model.Dish;
 import com.example.foodorderingapp.Model.Order;
 import com.example.foodorderingapp.R;
-import com.example.foodorderingapp.Utilites.ApplicationClass;
+import com.example.foodorderingapp.Data.ApplicationClass;
 
 public class CheckoutActivity extends AppCompatActivity {
     TextView Tax, deliveryService, totalPrice, itemsTotalPrice;

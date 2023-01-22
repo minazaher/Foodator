@@ -7,7 +7,7 @@
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:id="@+id/main"
-    tools:context=".Activity.HomePage">
+    tools:context=".UI.HomePage.HomePage">
 
 
     <ScrollView
@@ -227,14 +227,14 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/pop_recview"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="384dp"
+                    android:layout_height="212dp"
                     android:orientation="horizontal"
                     android:visibility="visible"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/linear_layout1"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:listitem="@layout/popular_dishes_card" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.example.foodorderingapp.Adapter;
+package com.example.foodorderingapp.UI.Profile;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.foodorderingapp.Data.OrderDao;
 import com.example.foodorderingapp.Model.Order;
 import com.example.foodorderingapp.R;
-import com.example.foodorderingapp.Utilites.ApplicationClass;
-import com.example.foodorderingapp.Utilites.DishDatabase;
+import com.example.foodorderingapp.Data.ApplicationClass;
+import com.example.foodorderingapp.Data.DishDatabase;
 
 import java.util.List;
 

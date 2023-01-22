@@ -5,8 +5,6 @@ import android.app.Application;
 import androidx.lifecycle.LiveData;
 
 import com.example.foodorderingapp.Model.Order;
-import com.example.foodorderingapp.Model.OrderUserCrossRef;
-import com.example.foodorderingapp.Utilites.DishDatabase;
 
 import java.util.List;
 

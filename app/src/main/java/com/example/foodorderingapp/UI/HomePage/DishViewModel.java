@@ -1,4 +1,4 @@
-package com.example.foodorderingapp.Model;
+package com.example.foodorderingapp.UI.HomePage;
 
 import android.app.Application;
 
@@ -7,6 +7,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import com.example.foodorderingapp.Data.DishRepository;
+import com.example.foodorderingapp.Model.Dish;
 
 import java.util.List;
 

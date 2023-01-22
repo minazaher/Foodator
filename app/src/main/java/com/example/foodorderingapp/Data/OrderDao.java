@@ -8,7 +8,6 @@ import androidx.room.Query;
 import androidx.room.Transaction;
 
 import com.example.foodorderingapp.Model.Order;
-import com.example.foodorderingapp.Model.OrderUserCrossRef;
 
 import java.util.List;
 

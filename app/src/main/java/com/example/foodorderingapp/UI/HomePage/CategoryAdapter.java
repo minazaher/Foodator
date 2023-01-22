@@ -1,4 +1,4 @@
-package com.example.foodorderingapp.Adapter;
+package com.example.foodorderingapp.UI.HomePage;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foodorderingapp.Model.Category;
-import com.example.foodorderingapp.Model.Dish;
 import com.example.foodorderingapp.R;
 
 import java.util.ArrayList;

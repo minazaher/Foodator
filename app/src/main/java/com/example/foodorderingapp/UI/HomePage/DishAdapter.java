@@ -1,4 +1,4 @@
-package com.example.foodorderingapp.Adapter;
+package com.example.foodorderingapp.UI.HomePage;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -12,10 +12,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.foodorderingapp.Activity.showDetalis;
+import com.example.foodorderingapp.UI.showDetalis;
 import com.example.foodorderingapp.Model.Dish;
 import com.example.foodorderingapp.R;
-import com.example.foodorderingapp.Utilites.ApplicationClass;
+import com.example.foodorderingapp.Data.ApplicationClass;
 
 import java.util.ArrayList;
 import java.util.List;

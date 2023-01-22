@@ -1,8 +1,7 @@
-package com.example.foodorderingapp.Activity;
+package com.example.foodorderingapp.UI.Profile;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -10,14 +9,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.foodorderingapp.Adapter.CategoryAdapter;
-import com.example.foodorderingapp.Adapter.OrderAdapter;
+import com.example.foodorderingapp.UI.HomePage.CategoryAdapter;
+import com.example.foodorderingapp.UI.SignUpActivity;
 import com.example.foodorderingapp.Data.OrderDao;
 import com.example.foodorderingapp.Model.Category;
 import com.example.foodorderingapp.Model.Order;
 import com.example.foodorderingapp.R;
-import com.example.foodorderingapp.Utilites.ApplicationClass;
-import com.example.foodorderingapp.Utilites.DishDatabase;
+import com.example.foodorderingapp.Data.ApplicationClass;
+import com.example.foodorderingapp.Data.DishDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,17 +51,9 @@ public class ProfileActivity extends AppCompatActivity {
         }).start();
 
         recyclerViewCategory();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                RecycleViewOrderHistory();
-                btn_updateOrders.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Orders.getAdapter().notifyDataSetChanged();
-                    }
-                });
-            }
+        new Thread(() -> {
+            RecycleViewOrderHistory();
+            btn_updateOrders.setOnClickListener(view -> Orders.getAdapter().notifyDataSetChanged());
         }).start();
 
     }

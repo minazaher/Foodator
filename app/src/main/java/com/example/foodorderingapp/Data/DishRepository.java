@@ -5,7 +5,6 @@ import android.app.Application;
 import androidx.lifecycle.LiveData;
 
 import com.example.foodorderingapp.Model.Dish;
-import com.example.foodorderingapp.Utilites.DishDatabase;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;

@@ -1,4 +1,4 @@
-package com.example.foodorderingapp.Utilites;
+package com.example.foodorderingapp.Data;
 
 import android.app.Application;
 

@@ -1,4 +1,4 @@
-package com.example.foodorderingapp.Activity;
+package com.example.foodorderingapp.UI.HomePage;
 
 
 import static com.example.foodorderingapp.R.layout.activity_home_page;
@@ -18,14 +18,14 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.foodorderingapp.Adapter.CategoryAdapter;
-import com.example.foodorderingapp.Adapter.DishAdapter;
+import com.example.foodorderingapp.UI.Checkout.CheckoutActivity;
+import com.example.foodorderingapp.UI.Profile.ProfileActivity;
+import com.example.foodorderingapp.UI.SignUpActivity;
 import com.example.foodorderingapp.Data.DishRepository;
 import com.example.foodorderingapp.Model.Category;
 import com.example.foodorderingapp.Model.Dish;
-import com.example.foodorderingapp.Model.DishViewModel;
 import com.example.foodorderingapp.R;
-import com.example.foodorderingapp.Utilites.ApplicationClass;
+import com.example.foodorderingapp.Data.ApplicationClass;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;

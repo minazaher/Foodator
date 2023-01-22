@@ -1,4 +1,4 @@
-package com.example.foodorderingapp.Utilites;
+package com.example.foodorderingapp.Data;
 
 import android.content.Context;
 
@@ -8,9 +8,6 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-import com.example.foodorderingapp.Data.DishDao;
-import com.example.foodorderingapp.Data.OrderDao;
-import com.example.foodorderingapp.Data.UserDao;
 import com.example.foodorderingapp.Model.Dish;
 import com.example.foodorderingapp.Model.Order;
 import com.example.foodorderingapp.Model.User;
@@ -33,7 +30,7 @@ public abstract class DishDatabase extends RoomDatabase {
                 public void run() {
                     DishDao dishDao = instance.dishDao();
                     UserDao userDao = instance.userDao();
-                    //   OrderDao orderDao = instance.orderDao();
+                    OrderDao orderDao = instance.orderDao();
                 }
             });
         }

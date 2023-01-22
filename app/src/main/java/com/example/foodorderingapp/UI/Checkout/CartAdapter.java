@@ -1,6 +1,5 @@
-package com.example.foodorderingapp.Adapter;
+package com.example.foodorderingapp.UI.Checkout;
 
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,10 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.foodorderingapp.Activity.HomePage;
 import com.example.foodorderingapp.Model.Dish;
 import com.example.foodorderingapp.R;
-import com.example.foodorderingapp.Utilites.ApplicationClass;
+import com.example.foodorderingapp.Data.ApplicationClass;
 
 import java.util.ArrayList;
 

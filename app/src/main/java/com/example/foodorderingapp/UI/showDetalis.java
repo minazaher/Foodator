@@ -1,4 +1,4 @@
-package com.example.foodorderingapp.Activity;
+package com.example.foodorderingapp.UI;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -10,10 +10,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.example.foodorderingapp.UI.HomePage.HomePage;
 import com.example.foodorderingapp.Data.DishRepository;
 import com.example.foodorderingapp.Model.Dish;
 import com.example.foodorderingapp.R;
-import com.example.foodorderingapp.Utilites.ApplicationClass;
+import com.example.foodorderingapp.Data.ApplicationClass;
 
 import java.util.ArrayList;
 

@@ -3,7 +3,6 @@ package com.example.foodorderingapp.Data;
 import android.app.Application;
 
 import com.example.foodorderingapp.Model.User;
-import com.example.foodorderingapp.Utilites.DishDatabase;
 
 import java.util.concurrent.atomic.AtomicReference;
 
